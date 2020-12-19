@@ -1,7 +1,7 @@
 
 const { exec } = require('child_process');
 
-const runcode =  (cmd) => {
+const runcode = async (cmd) => {
 
     //executing the code
      exec(cmd, (err, stdout, stderr) => {
@@ -11,7 +11,7 @@ const runcode =  (cmd) => {
         }
       
         console.log(`output :  ${stdout}`);
-        // res.send(stdout);
+        console.log("stdout jo return hoga",stdout)
         return stdout;
       });
 }
