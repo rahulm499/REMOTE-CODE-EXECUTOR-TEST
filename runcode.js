@@ -1,4 +1,3 @@
-
 const { exec } = require('child_process');
 
 const runcode = (cmd) => {
@@ -7,13 +6,15 @@ const runcode = (cmd) => {
     return new Promise(function(resolve, reject){
       exec(cmd, (err, stdout, stderr) => {
         if (err) {
-          console.error(`exec error: ${err}`);
-          reject(err);
+          console.error(`exec error: ${err.message}`);
+          //console.log("errorrr yaha tk tha")
+          resolve('Invalid Code');
+        }
+        else {
+          console.log(`output :  ${stdout}`);
+        resolve(stdout);
         }
         
-        console.log(`output :  ${stdout}`);
-        console.log("stdout jo return hoga",stdout)
-        resolve(stdout);
       });
     })
       

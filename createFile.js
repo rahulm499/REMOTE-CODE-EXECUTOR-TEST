@@ -1,7 +1,6 @@
 var handleFile = require("./handleFile");
 var runcode = require('./runcode');
 
-
 const createFile = async (lan,code) => {
     //dictionary for language to language command to run its code
     var lancmd = {
@@ -22,12 +21,13 @@ const createFile = async (lan,code) => {
     const runcmd = lancmd[lan] + fName ;
 
     let temp = await handleFile.writetofile(fName,code);
-
-    console.log("temp= ",temp)
     let val = await runcode(runcmd);
-    console.log("val = ",val)
+    console.log(val)
+    if(temp!==1){
+        return temp;
+    }
+    temp = await handleFile.deleteFile(fName);
     return val;
 }
 
 module.exports = createFile ;
-
