@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <div class='navbar'>
+        <li>
+            <ul><a href="/">Home</a></ul>
+        </li>
+    </div>
+    <main>
+        <form class="code-form" action="/run" method="POST">
+            <textarea type="text" name="code" id="code"></textarea>
+            <div class="form-control">
+                
+                <select name="lang" >
+                    <option value="javascript">JavaScript</option>
+                    <option value="python">Python</option>                    
+                </select>
+                <button class="btn" type="submit">Run Code</button>
+            </div>
+
+            
+        </form>
+    </main>
+</body>
+</html>
